@@ -5,11 +5,19 @@ html
   body
     h1 Movies
 
-    each movie in data
-      div(style="margin-bottom:20px; border:1px solid #ccc; padding:10px;")
-        h3= movie.properties.name
-        p Director: #{movie.properties.director}
-        p Genre: #{movie.properties.genre}
+    a(href="/update-cobj") Add / Update Movie
 
     br
-    a(href="/update-cobj") Add / Update Movie
+    br
+
+    table(border="1" cellpadding="10" cellspacing="0")
+      tr
+        th Name
+        th Director
+        th Genre
+
+      each movie in data
+        tr
+          td= movie.properties.name
+          td= movie.properties.director
+          td= movie.properties.genre
