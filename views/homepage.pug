@@ -1,0 +1,15 @@
+html
+  head
+    title= title
+
+  body
+    h1 Movies
+
+    each movie in data
+      div(style="margin-bottom:20px; border:1px solid #ccc; padding:10px;")
+        h3= movie.properties.name
+        p Director: #{movie.properties.director}
+        p Genre: #{movie.properties.genre}
+
+    br
+    a(href="/update-cobj") Add / Update Movie
